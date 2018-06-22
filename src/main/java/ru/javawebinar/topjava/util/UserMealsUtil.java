@@ -29,7 +29,6 @@ public class UserMealsUtil {
         // TODO return filtered list with correctly exceeded field
         Map<LocalDate, Integer> collect = mealList.stream()
                 .collect(Collectors.groupingBy(s -> s.getDateTime().toLocalDate(), Collectors.summingInt(UserMeal::getCalories)));
-        collect.forEach((k,v)-> System.out.println(k + " " + v));
 
         return mealList.stream()
                 .filter(s -> TimeUtil.isBetween(s.getDateTime().toLocalTime(), startTime, endTime))
