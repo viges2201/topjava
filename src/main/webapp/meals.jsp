@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
 <head>
     <!-- Required meta tags -->
@@ -25,6 +26,13 @@
         td {
             padding-right: 50px;
         }
+
+        /*.exceeded {*/
+        /*background-color: red;*/
+        /*}*/
+        /*.normal{*/
+        /*background-color: blue;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -42,7 +50,7 @@
         </thead>
         <c:forEach items="${mealList}" var="meal">
             <jsp:useBean id="meal" scope="page" type="ru.javawebinar.topjava.model.MealWithExceed"/>
-            <tr class="${meal.exceed ? "exceded" : "normal" }">
+            <tr class="${meal.exceed ? "exceeded" : "normal"}">
                 <td>
                     <fmt:parseDate value="${meal.dateTime}" pattern="y-M-dd'T'H:m" var="parsedDate"/>
                     <fmt:formatDate value="${parsedDate}" pattern="yyyy.MM.dd HH:mm"/>
