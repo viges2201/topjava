@@ -42,5 +42,6 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
     public Collection<Meal> getAll() {
         return repository.values();
     }
+
 }
 
